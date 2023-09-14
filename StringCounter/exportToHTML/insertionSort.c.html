@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>insertionSort.c</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000000;}
+.s1 { color: #808000;}
+.s2 { color: #008000; font-weight: bold;}
+.s3 { color: #808080; font-style: italic;}
+.s4 { color: #0000ff;}
+.s5 { color: #000080; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+insertionSort.c</font>
+</center></td></tr></table>
+<pre>
+
+
+<span class="s1">#include </span><span class="s2">&lt;string.h&gt;</span>
+<span class="s1">#include </span><span class="s2">&quot;stringCounter.h&quot;</span>
+<span class="s3">//</span>
+<span class="s1">#define </span>MAX <span class="s4">50</span>
+<span class="s1">#define </span>STRINGS <span class="s4">50</span>
+
+<span class="s3">// this function swap the elements when need</span>
+<span class="s3">// this is used for the insertion sort</span>
+
+<span class="s5">void </span>swap(<span class="s5">char </span>array[STRINGS][MAX], <span class="s5">int </span>index1, <span class="s5">int </span>index2) {
+
+    <span class="s5">if </span>(index1 != index2) {
+        <span class="s5">char </span>swap_elem[MAX];
+        memset(swap_elem, <span class="s2">'</span><span class="s5">\0</span><span class="s2">'</span>, <span class="s5">sizeof</span>(swap_elem));
+        strcpy(swap_elem, array[index1]);
+        strcpy(array[index1], array[index2]);
+        strcpy(array[index2], swap_elem);
+
+    }
+}
+
+
+<span class="s3">// this is the code for insertion sort</span>
+<span class="s3">//</span>
+
+<span class="s5">void </span>insertionSort (<span class="s5">char </span>inputStrings[][MAX], <span class="s5">int </span>numberOfStringsArray2){
+    <span class="s5">int </span>i,j;
+
+
+    <span class="s5">for </span>( i = <span class="s4">1</span>; i &lt; numberOfStringsArray2 ; i++) {
+        j = i;
+
+        <span class="s5">while</span>(j &gt; <span class="s4">0 </span>&amp;&amp; strcasecmp(inputStrings[j], inputStrings[j-<span class="s4">1</span>]) &lt; <span class="s4">0</span>) {
+            swap(inputStrings,j, j-<span class="s4">1</span>);
+            j--;
+        }
+    }
+}
+
+</pre>
+</body>
+</html>

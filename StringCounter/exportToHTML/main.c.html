@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>main.c</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000000;}
+.s1 { color: #808000;}
+.s2 { color: #008000; font-weight: bold;}
+.s3 { color: #0000ff;}
+.s4 { color: #000080; font-weight: bold;}
+.s5 { color: #808080; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.c</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">#include </span><span class="s2">&quot;fileIO.h&quot;</span>
+<span class="s1">#include </span><span class="s2">&quot;insertionSort.h&quot;</span>
+<span class="s1">#include </span><span class="s2">&quot;stringCounter.h&quot;</span>
+<span class="s1">#include </span><span class="s2">&quot;binarySearch.h&quot;</span>
+<span class="s1">#include </span><span class="s2">&quot;Occurances.h&quot;</span>
+
+
+<span class="s1">#define </span>MAX <span class="s3">50</span>
+<span class="s1">#define </span>STRINGS <span class="s3">50</span>
+
+
+
+<span class="s4">int </span>main() {
+
+
+<span class="s4">int </span>numOfStringsArray2;
+
+    <span class="s5">//sentences read from input1.txt</span>
+    <span class="s5">// set all values in array1 to zero</span>
+    <span class="s4">char </span>array1[STRINGS][MAX] = {<span class="s2">&quot;&quot;</span>};
+
+    <span class="s5">//sentences read from input2.txt</span>
+    <span class="s5">// set all values in array2 to zero</span>
+
+    <span class="s4">char </span>array2[STRINGS][MAX] = {<span class="s2">&quot;&quot;</span>};
+
+
+    readSentences(<span class="s2">&quot;C:</span><span class="s4">\\</span><span class="s2">Users</span><span class="s4">\\</span><span class="s2">Owner</span><span class="s4">\\</span><span class="s2">CLionProjects</span><span class="s4">\\</span><span class="s2">assignment1</span><span class="s4">\\</span><span class="s2">first text.txt&quot;</span>, array1);
+    readSentences(<span class="s2">&quot;C:</span><span class="s4">\\</span><span class="s2">Users</span><span class="s4">\\</span><span class="s2">Owner</span><span class="s4">\\</span><span class="s2">CLionProjects</span><span class="s4">\\</span><span class="s2">assignment1</span><span class="s4">\\</span><span class="s2">second text.txt&quot;</span>, array2);
+
+<span class="s5">// sizez of both strings can be calculated</span>
+ <span class="s5">// printf(&quot;%d&quot;,array_size(array1));</span>
+<span class="s5">// printf(&quot;\n%d&quot;,array_size(array2));</span>
+
+<span class="s5">// this uses the array_size function to give us the number of strings</span>
+   numOfStringsArray2 = array_size(array2);
+
+   <span class="s5">// alphabetically arranges array2 using insertion sort</span>
+
+   insertionSort(array2 , numOfStringsArray2);
+
+   <span class="s5">// initalises and assigns the values needed for the binary search</span>
+   <span class="s5">// l = 0 as the leftmost(first) index</span>
+   <span class="s5">// r = to the amount of rows in array2</span>
+   <span class="s5">// r is calculated using the array_size function which is in the stringCounter module</span>
+
+   <span class="s4">int </span>l,r;
+   l = <span class="s3">0</span>;
+   r = array_size(array2) ;
+
+
+<span class="s5">// array1 and array2 can be printed using the code down below</span>
+
+
+<span class="s5">//int m;</span>
+<span class="s5">//printf(&quot;\nArray 2 is:&quot;);</span>
+<span class="s5">//    for ( m = 0; m &lt; numOfStringsArray2; m++) {</span>
+<span class="s5">//        printf(&quot;\n%s&quot;, array2[m]);</span>
+<span class="s5">//    }</span>
+<span class="s5">//</span>
+<span class="s5">//printf(&quot;\n\n&quot;);</span>
+<span class="s5">//    printf(&quot;\nArray 1 is:&quot;);</span>
+<span class="s5">//    int o;</span>
+<span class="s5">//    for (int o = 0; o &lt; array_size(array1); o++) {</span>
+<span class="s5">//</span>
+<span class="s5">//        printf(&quot;\n%s&quot;, array1[o]);</span>
+<span class="s5">//</span>
+<span class="s5">//    }</span>
+
+
+
+  <span class="s4">int </span>index;
+    <span class="s4">int </span>v;
+
+    <span class="s4">for </span>(v = <span class="s3">0</span>; v &lt; array_size(array1) ; v++) {
+
+       index = binarySearch(array2 ,l,r,array1[v]);
+       occurances(array2 , index, array1[v]);
+
+    }
+
+
+}
+</pre>
+</body>
+</html>

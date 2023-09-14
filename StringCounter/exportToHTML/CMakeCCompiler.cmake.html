@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>CMakeCCompiler.cmake</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000000;}
+.s1 { color: #000000;}
+.s2 { color: #008000; font-weight: bold;}
+.s3 { color: #000080; font-weight: bold;}
+.s4 { color: #808080; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CMakeCCompiler.cmake</font>
+</center></td></tr></table>
+<pre>set(<span class="s2">CMAKE_C_COMPILER </span>&quot;<span class="s2">C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/bin/gcc.exe</span>&quot;)
+set(<span class="s2">CMAKE_C_COMPILER_ARG1 </span>&quot;&quot;)
+set(<span class="s2">CMAKE_C_COMPILER_ID </span>&quot;<span class="s2">GNU</span>&quot;)
+set(<span class="s2">CMAKE_C_COMPILER_VERSION </span>&quot;<span class="s2">11.2.0</span>&quot;)
+set(<span class="s2">CMAKE_C_COMPILER_VERSION_INTERNAL </span>&quot;&quot;)
+set(<span class="s2">CMAKE_C_COMPILER_WRAPPER </span>&quot;&quot;)
+set(<span class="s2">CMAKE_C_STANDARD_COMPUTED_DEFAULT </span>&quot;<span class="s2">17</span>&quot;)
+set(<span class="s2">CMAKE_C_COMPILE_FEATURES </span>&quot;<span class="s2">c_std_90;c_function_prototypes;c_std_99;c_restrict;c_variadic_macros;c_std_11;c_static_assert;c_std_17;c_std_23</span>&quot;)
+set(<span class="s2">CMAKE_C90_COMPILE_FEATURES </span>&quot;<span class="s2">c_std_90;c_function_prototypes</span>&quot;)
+set(<span class="s2">CMAKE_C99_COMPILE_FEATURES </span>&quot;<span class="s2">c_std_99;c_restrict;c_variadic_macros</span>&quot;)
+set(<span class="s2">CMAKE_C11_COMPILE_FEATURES </span>&quot;<span class="s2">c_std_11;c_static_assert</span>&quot;)
+set(<span class="s2">CMAKE_C17_COMPILE_FEATURES </span>&quot;<span class="s2">c_std_17</span>&quot;)
+set(<span class="s2">CMAKE_C23_COMPILE_FEATURES </span>&quot;<span class="s2">c_std_23</span>&quot;)
+
+set(<span class="s2">CMAKE_C_PLATFORM_ID </span>&quot;<span class="s2">MinGW</span>&quot;)
+set(<span class="s2">CMAKE_C_SIMULATE_ID </span>&quot;&quot;)
+set(<span class="s2">CMAKE_C_COMPILER_FRONTEND_VARIANT </span>&quot;&quot;)
+set(<span class="s2">CMAKE_C_SIMULATE_VERSION </span>&quot;&quot;)
+
+
+
+
+set(<span class="s2">CMAKE_AR </span>&quot;<span class="s2">C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/bin/ar.exe</span>&quot;)
+set(<span class="s2">CMAKE_C_COMPILER_AR </span>&quot;<span class="s2">C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/bin/gcc-ar.exe</span>&quot;)
+set(<span class="s2">CMAKE_RANLIB </span>&quot;<span class="s2">C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/bin/ranlib.exe</span>&quot;)
+set(<span class="s2">CMAKE_C_COMPILER_RANLIB </span>&quot;<span class="s2">C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/bin/gcc-ranlib.exe</span>&quot;)
+set(<span class="s2">CMAKE_LINKER </span>&quot;<span class="s2">C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/bin/ld.exe</span>&quot;)
+set(<span class="s2">CMAKE_MT </span>&quot;&quot;)
+set(<span class="s2">CMAKE_COMPILER_IS_GNUCC 1</span>)
+set(<span class="s2">CMAKE_C_COMPILER_LOADED 1</span>)
+set(<span class="s2">CMAKE_C_COMPILER_WORKS TRUE</span>)
+set(<span class="s2">CMAKE_C_ABI_COMPILED TRUE</span>)
+set(<span class="s2">CMAKE_COMPILER_IS_MINGW 1</span>)
+set(<span class="s2">CMAKE_COMPILER_IS_CYGWIN </span>)
+<span class="s3">if</span>(<span class="s2">CMAKE_COMPILER_IS_CYGWIN</span>)
+  set(<span class="s2">CYGWIN 1</span>)
+  set(<span class="s2">UNIX 1</span>)
+<span class="s3">endif</span>()
+
+set(<span class="s2">CMAKE_C_COMPILER_ENV_VAR </span>&quot;<span class="s2">CC</span>&quot;)
+
+<span class="s3">if</span>(<span class="s2">CMAKE_COMPILER_IS_MINGW</span>)
+  set(<span class="s2">MINGW 1</span>)
+<span class="s3">endif</span>()
+set(<span class="s2">CMAKE_C_COMPILER_ID_RUN 1</span>)
+set(<span class="s2">CMAKE_C_SOURCE_FILE_EXTENSIONS c</span>;<span class="s2">m</span>)
+set(<span class="s2">CMAKE_C_IGNORE_EXTENSIONS h</span>;<span class="s2">H</span>;<span class="s2">o</span>;<span class="s2">O</span>;<span class="s2">obj</span>;<span class="s2">OBJ</span>;<span class="s2">def</span>;<span class="s2">DEF</span>;<span class="s2">rc</span>;<span class="s2">RC</span>)
+set(<span class="s2">CMAKE_C_LINKER_PREFERENCE 10</span>)
+
+<span class="s4"># Save compiler ABI information.</span>
+set(<span class="s2">CMAKE_C_SIZEOF_DATA_PTR </span>&quot;<span class="s2">8</span>&quot;)
+set(<span class="s2">CMAKE_C_COMPILER_ABI </span>&quot;&quot;)
+set(<span class="s2">CMAKE_C_BYTE_ORDER </span>&quot;<span class="s2">LITTLE_ENDIAN</span>&quot;)
+set(<span class="s2">CMAKE_C_LIBRARY_ARCHITECTURE </span>&quot;&quot;)
+
+<span class="s3">if</span>(<span class="s2">CMAKE_C_SIZEOF_DATA_PTR</span>)
+  set(<span class="s2">CMAKE_SIZEOF_VOID_P </span>&quot;<span class="s3">${</span><span class="s2">CMAKE_C_SIZEOF_DATA_PTR</span><span class="s3">}</span>&quot;)
+<span class="s3">endif</span>()
+
+<span class="s3">if</span>(<span class="s2">CMAKE_C_COMPILER_ABI</span>)
+  set(<span class="s2">CMAKE_INTERNAL_PLATFORM_ABI </span>&quot;<span class="s3">${</span><span class="s2">CMAKE_C_COMPILER_ABI</span><span class="s3">}</span>&quot;)
+<span class="s3">endif</span>()
+
+<span class="s3">if</span>(<span class="s2">CMAKE_C_LIBRARY_ARCHITECTURE</span>)
+  set(<span class="s2">CMAKE_LIBRARY_ARCHITECTURE </span>&quot;&quot;)
+<span class="s3">endif</span>()
+
+set(<span class="s2">CMAKE_C_CL_SHOWINCLUDES_PREFIX </span>&quot;&quot;)
+<span class="s3">if</span>(<span class="s2">CMAKE_C_CL_SHOWINCLUDES_PREFIX</span>)
+  set(<span class="s2">CMAKE_CL_SHOWINCLUDES_PREFIX </span>&quot;<span class="s3">${</span><span class="s2">CMAKE_C_CL_SHOWINCLUDES_PREFIX</span><span class="s3">}</span>&quot;)
+<span class="s3">endif</span>()
+
+
+
+
+
+set(<span class="s2">CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES </span>&quot;<span class="s2">C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include;C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/include;C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed;C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/x86_64-w64-mingw32/include;/MinGW/include</span>&quot;)
+set(<span class="s2">CMAKE_C_IMPLICIT_LINK_LIBRARIES </span>&quot;<span class="s2">mingw32;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;iconv;mingw32;gcc;moldname;mingwex;kernel32</span>&quot;)
+set(<span class="s2">CMAKE_C_IMPLICIT_LINK_DIRECTORIES </span>&quot;<span class="s2">C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0;C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/lib/gcc;C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/x86_64-w64-mingw32/lib;C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/lib;/MinGW/lib</span>&quot;)
+set(<span class="s2">CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES </span>&quot;&quot;)
+</pre>
+</body>
+</html>

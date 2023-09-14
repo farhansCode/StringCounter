@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>binarySearch.c</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000000;}
+.s1 { color: #808000;}
+.s2 { color: #008000; font-weight: bold;}
+.s3 { color: #808080; font-style: italic;}
+.s4 { color: #000080; font-weight: bold;}
+.s5 { color: #0000ff;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+binarySearch.c</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">#include </span><span class="s2">&lt;string.h&gt;</span>
+<span class="s1">#include </span><span class="s2">&quot;binarySearch.h&quot;</span>
+
+<span class="s3">// This is a recursive binary search function. It returns</span>
+<span class="s3">// location of x in given array arr[l..r] is present,</span>
+<span class="s3">// otherwise -1</span>
+
+<span class="s4">int </span>binarySearch(<span class="s4">char </span>array[][MAX], <span class="s4">int </span>l, <span class="s4">int </span>r, <span class="s4">char </span>x[]) {
+
+
+   <span class="s4">if </span>(r &gt;= l ) {
+        <span class="s4">int </span>mid = l + (r - l) / <span class="s5">2</span>;
+
+<span class="s3">// If the element is present at the middle return the index at the middle</span>
+
+        <span class="s4">if </span>(strcasecmp(array[mid], x) == <span class="s5">0</span>) {
+            <span class="s4">return </span>mid;
+        }
+
+
+<span class="s3">// If element is smaller than mid, then</span>
+<span class="s3">// it can only be present in left subarray</span>
+        <span class="s4">if </span>(strcasecmp(array[mid] , x) &gt; <span class="s5">0</span>) {
+            <span class="s4">return </span>binarySearch(array, l,mid - <span class="s5">1</span>, x);
+        }
+
+<span class="s3">// Else the element can only be present</span>
+<span class="s3">// in right subarray</span>
+       <span class="s4">if </span>(strcasecmp(array[mid], x) &lt; <span class="s5">0</span>) {
+           <span class="s4">return </span>binarySearch(array, mid + <span class="s5">1</span>, r, x);
+       }
+   }
+
+
+<span class="s3">// We reach here when element is not</span>
+<span class="s3">// present in array</span>
+
+    <span class="s4">return </span>-<span class="s5">1</span>;
+
+}</pre>
+</body>
+</html>

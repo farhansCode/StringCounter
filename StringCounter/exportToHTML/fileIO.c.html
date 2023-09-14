@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>fileIO.c</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000000;}
+.s1 { color: #808000;}
+.s2 { color: #008000; font-weight: bold;}
+.s3 { color: #808080; font-style: italic;}
+.s4 { color: #000080; font-weight: bold;}
+.s5 { color: #0000ff;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+fileIO.c</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">#include </span><span class="s2">&lt;stdio.h&gt;</span>
+<span class="s1">#include </span><span class="s2">&lt;string.h&gt;</span>
+<span class="s1">#include </span><span class="s2">&quot;fileIO.h&quot;</span>
+<span class="s1">#include </span><span class="s2">&quot;insertionSort.h&quot;</span>
+
+<span class="s3">/* This function reads a file line by line and places its content in a 2D Array 
+ * inputFilePath: location of the file to be read 
+ * inputSentences: 2D Array of the sentences read from the file 
+*/</span>
+
+
+<span class="s4">int </span>readSentences(<span class="s4">char </span>inputFilePath[], <span class="s4">char  </span>inputSentences[][MAX] ) {
+    FILE *fp = fopen(inputFilePath, <span class="s2">&quot;r+&quot;</span>);
+    <span class="s4">int </span>i=<span class="s5">0</span>;
+    <span class="s4">int </span>lineNum=<span class="s5">0</span>;
+
+    <span class="s4">if </span>(fp == NULL) {      <span class="s3">/* checks to see if the file exists  */</span>
+        perror(<span class="s2">&quot;There is nothing to read.&quot;</span>);
+        lineNum = -<span class="s5">1</span>; <span class="s3">/* use this as a file not found code */</span>
+    } <span class="s4">else </span>{
+<span class="s3">// fgets returns NULL when it gets to the end of the file</span>
+        <span class="s4">while </span>(fgets(inputSentences[lineNum], <span class="s4">sizeof</span>(inputSentences[lineNum]), fp) != NULL) {
+
+            <span class="s3">// if there is a \n(next line) it will be replaced by the null terminator</span>
+            <span class="s3">// the null terminator should end every string</span>
+
+            <span class="s4">if</span>(inputSentences[i][strlen(inputSentences[i])-<span class="s5">1</span>] == <span class="s2">'</span><span class="s4">\n</span><span class="s2">'</span>){
+                inputSentences[i][strlen(inputSentences[i])-<span class="s5">1</span>] = <span class="s2">'</span><span class="s4">\0</span><span class="s2">'</span>;
+            }
+
+            i++;
+            lineNum++;
+
+
+        }
+        fclose(fp);
+
+
+ }
+
+
+}
+
+</pre>
+</body>
+</html>

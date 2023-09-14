@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Occurances.c</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000000;}
+.s1 { color: #808000;}
+.s2 { color: #008000; font-weight: bold;}
+.s3 { color: #000080; font-weight: bold;}
+.s4 { color: #0000ff;}
+.s5 { color: #808080; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Occurances.c</font>
+</center></td></tr></table>
+<pre>
+
+<span class="s1">#include</span><span class="s2">&lt;stdio.h&gt;</span>
+<span class="s1">#include </span><span class="s2">&lt;string.h&gt;</span>
+<span class="s1">#include </span><span class="s2">&quot;Occurances.h&quot;</span>
+
+
+
+<span class="s3">int </span>occurances (<span class="s3">char </span>array[][MAX], <span class="s3">int </span>index, <span class="s3">char </span>target[]){
+
+    <span class="s3">if</span>(index == -<span class="s4">1</span>){
+        <span class="s5">// if index is -1 then that means the string does not occur in array2</span>
+        printf(<span class="s2">&quot;</span><span class="s3">\n</span><span class="s2">%s: 0&quot;</span>, target);
+    }
+
+<span class="s3">else </span>{
+        <span class="s3">int </span>i, j;
+        <span class="s3">int </span>occurred = <span class="s4">1</span>;
+        <span class="s5">// j counts above(to the left of the index)</span>
+        <span class="s5">// i counts below(to the right of the index)</span>
+
+        i = index + <span class="s4">1</span>;
+        j = index - <span class="s4">1</span>;
+
+
+        <span class="s3">while </span>(strcasecmp(array[index], array[i]) == <span class="s4">0</span>) {
+
+            occurred++;
+            i++;
+        }
+
+        <span class="s3">while </span>(strcasecmp(array[index], array[j]) == <span class="s4">0</span>) {
+
+            occurred++;
+            j--;
+
+        }
+
+<span class="s5">// prints out the number of times a string in array1 occures in array2</span>
+        printf(<span class="s2">&quot;</span><span class="s3">\n</span><span class="s2">%s: %d&quot;</span>, target, occurred);
+    }
+}
+</pre>
+</body>
+</html>
